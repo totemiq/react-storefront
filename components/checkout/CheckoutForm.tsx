@@ -28,11 +28,15 @@ const sectionsManager = (checkout?: CheckoutDetailsFragment): CollapsedSections 
   if (!checkout || !checkout.email) {
     return state;
   }
+  // Show billingAddress and payment
   state.billingAddress = false;
+  state.payment = false;
+  /* console.log(!checkout.billingAddress)
   if (!checkout.billingAddress) {
     return state;
   }
   state.shippingAddress = false;
+  console.log(checkout.isShippingRequired)
   if (checkout.isShippingRequired && !checkout.shippingAddress) {
     return state;
   }
@@ -40,7 +44,7 @@ const sectionsManager = (checkout?: CheckoutDetailsFragment): CollapsedSections 
   if (checkout.isShippingRequired && !checkout.shippingMethod) {
     return state;
   }
-  state.payment = false;
+  state.payment = false; */
   return state;
 };
 
@@ -52,6 +56,7 @@ export function CheckoutForm() {
   }
 
   const collapsedSections = sectionsManager(checkout);
+  /* console.log(collapsedSections) */
 
   return (
     <section className="flex flex-auto flex-col overflow-y-auto px-4 pt-4 space-y-4 pb-4">

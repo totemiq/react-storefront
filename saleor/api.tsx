@@ -589,16 +589,24 @@ export type AppDeleteFailedInstallation = {
   errors: Array<AppError>;
 };
 
-export type AppDeleted = {
+export type AppDeleted = Event & {
   __typename?: 'AppDeleted';
   /**
-   * Look up a app.
+   * The application the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   app?: Maybe<App>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type AppError = {
@@ -758,16 +766,24 @@ export type AppInstallation = Job & Node & {
   updatedAt: Scalars['DateTime'];
 };
 
-export type AppInstalled = {
+export type AppInstalled = Event & {
   __typename?: 'AppInstalled';
   /**
-   * Look up a app.
+   * The application the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   app?: Maybe<App>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type AppManifestExtension = {
@@ -810,16 +826,24 @@ export type AppSortingInput = {
   field: AppSortField;
 };
 
-export type AppStatusChanged = {
+export type AppStatusChanged = Event & {
   __typename?: 'AppStatusChanged';
   /**
-   * Look up a app.
+   * The application the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   app?: Maybe<App>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** Represents token data. */
@@ -897,16 +921,24 @@ export type AppUpdate = {
   errors: Array<AppError>;
 };
 
-export type AppUpdated = {
+export type AppUpdated = Event & {
   __typename?: 'AppUpdated';
   /**
-   * Look up a app.
+   * The application the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   app?: Maybe<App>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** An enumeration. */
@@ -1863,16 +1895,24 @@ export type CategoryCreate = {
   productErrors: Array<ProductError>;
 };
 
-export type CategoryCreated = {
+export type CategoryCreated = Event & {
   __typename?: 'CategoryCreated';
   /**
-   * Look up a category.
+   * The category the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   category?: Maybe<Category>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -1888,16 +1928,24 @@ export type CategoryDelete = {
   productErrors: Array<ProductError>;
 };
 
-export type CategoryDeleted = {
+export type CategoryDeleted = Event & {
   __typename?: 'CategoryDeleted';
   /**
-   * Look up a category.
+   * The category the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   category?: Maybe<Category>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type CategoryFilterInput = {
@@ -2028,16 +2076,24 @@ export type CategoryUpdate = {
   productErrors: Array<ProductError>;
 };
 
-export type CategoryUpdated = {
+export type CategoryUpdated = Event & {
   __typename?: 'CategoryUpdated';
   /**
-   * Look up a category.
+   * The category the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   category?: Maybe<Category>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** Represents channel. */
@@ -2108,16 +2164,24 @@ export type ChannelCreateInput = {
   slug: Scalars['String'];
 };
 
-export type ChannelCreated = {
+export type ChannelCreated = Event & {
   __typename?: 'ChannelCreated';
   /**
-   * Look up a channel.
+   * The channel the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   channel?: Maybe<Channel>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -2152,16 +2216,24 @@ export type ChannelDeleteInput = {
   channelId: Scalars['ID'];
 };
 
-export type ChannelDeleted = {
+export type ChannelDeleted = Event & {
   __typename?: 'ChannelDeleted';
   /**
-   * Look up a channel.
+   * The channel the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   channel?: Maybe<Channel>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type ChannelError = {
@@ -2188,16 +2260,24 @@ export type ChannelErrorCode =
   | 'REQUIRED'
   | 'UNIQUE';
 
-export type ChannelStatusChanged = {
+export type ChannelStatusChanged = Event & {
   __typename?: 'ChannelStatusChanged';
   /**
-   * Look up a channel.
+   * The channel the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   channel?: Maybe<Channel>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -2232,16 +2312,24 @@ export type ChannelUpdateInput = {
   slug?: InputMaybe<Scalars['String']>;
 };
 
-export type ChannelUpdated = {
+export type ChannelUpdated = Event & {
   __typename?: 'ChannelUpdated';
   /**
-   * Look up a channel.
+   * The channel the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   channel?: Maybe<Channel>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** Checkout object. */
@@ -2469,16 +2557,24 @@ export type CheckoutCreateInput = {
   shippingAddress?: InputMaybe<AddressInput>;
 };
 
-export type CheckoutCreated = {
+export type CheckoutCreated = Event & {
   __typename?: 'CheckoutCreated';
   /**
-   * Look up a Checkout.
+   * The checkout the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   checkout?: Maybe<Checkout>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -2606,6 +2702,12 @@ export type CheckoutLine = Node & {
   requiresShipping: Scalars['Boolean'];
   /** The sum of the checkout line price, taxes and discounts. */
   totalPrice: TaxedMoney;
+  /** The sum of the checkout line price, without discounts. */
+  undiscountedTotalPrice: Money;
+  /** The unit price of the checkout line, without discounts. */
+  undiscountedUnitPrice: Money;
+  /** The unit price of the checkout line, with taxes and discounts. */
+  unitPrice: TaxedMoney;
   variant: ProductVariant;
 };
 
@@ -2751,16 +2853,24 @@ export type CheckoutSortingInput = {
   field: CheckoutSortField;
 };
 
-export type CheckoutUpdated = {
+export type CheckoutUpdated = Event & {
   __typename?: 'CheckoutUpdated';
   /**
-   * Look up a Checkout.
+   * The checkout the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   checkout?: Maybe<Checkout>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type ChoiceValue = {
@@ -3032,16 +3142,24 @@ export type CollectionCreateInput = {
   slug?: InputMaybe<Scalars['String']>;
 };
 
-export type CollectionCreated = {
+export type CollectionCreated = Event & {
   __typename?: 'CollectionCreated';
   /**
-   * Look up a collection.
+   * The collection the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   collection?: Maybe<Collection>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -3062,16 +3180,24 @@ export type CollectionDelete = {
   errors: Array<CollectionError>;
 };
 
-export type CollectionDeleted = {
+export type CollectionDeleted = Event & {
   __typename?: 'CollectionDeleted';
   /**
-   * Look up a collection.
+   * The collection the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   collection?: Maybe<Collection>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -3292,16 +3418,24 @@ export type CollectionUpdate = {
   errors: Array<CollectionError>;
 };
 
-export type CollectionUpdated = {
+export type CollectionUpdated = Event & {
   __typename?: 'CollectionUpdated';
   /**
-   * Look up a collection.
+   * The collection the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   collection?: Maybe<Collection>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -3690,16 +3824,24 @@ export type CustomerCreate = {
   user?: Maybe<User>;
 };
 
-export type CustomerCreated = {
+export type CustomerCreated = Event & {
   __typename?: 'CustomerCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a user.
+   * The user the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   user?: Maybe<User>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -3794,16 +3936,24 @@ export type CustomerUpdate = {
   user?: Maybe<User>;
 };
 
-export type CustomerUpdated = {
+export type CustomerUpdated = Event & {
   __typename?: 'CustomerUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a user.
+   * The user the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   user?: Maybe<User>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type DateRangeInput = {
@@ -4165,16 +4315,24 @@ export type DraftOrderCreateInput = {
   voucher?: InputMaybe<Scalars['ID']>;
 };
 
-export type DraftOrderCreated = {
+export type DraftOrderCreated = Event & {
   __typename?: 'DraftOrderCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -4190,16 +4348,24 @@ export type DraftOrderDelete = {
   orderErrors: Array<OrderError>;
 };
 
-export type DraftOrderDeleted = {
+export type DraftOrderDeleted = Event & {
   __typename?: 'DraftOrderDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type DraftOrderInput = {
@@ -4252,19 +4418,36 @@ export type DraftOrderUpdate = {
   orderErrors: Array<OrderError>;
 };
 
-export type DraftOrderUpdated = {
+export type DraftOrderUpdated = Event & {
   __typename?: 'DraftOrderUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
-export type Event = AppDeleted | AppInstalled | AppStatusChanged | AppUpdated | CategoryCreated | CategoryDeleted | CategoryUpdated | ChannelCreated | ChannelDeleted | ChannelStatusChanged | ChannelUpdated | CheckoutCreated | CheckoutUpdated | CollectionCreated | CollectionDeleted | CollectionUpdated | CustomerCreated | CustomerUpdated | DraftOrderCreated | DraftOrderDeleted | DraftOrderUpdated | FulfillmentCanceled | FulfillmentCreated | GiftCardCreated | GiftCardDeleted | GiftCardStatusChanged | GiftCardUpdated | InvoiceDeleted | InvoiceRequested | InvoiceSent | MenuCreated | MenuDeleted | MenuItemCreated | MenuItemDeleted | MenuItemUpdated | MenuUpdated | OrderCancelled | OrderConfirmed | OrderCreated | OrderFulfilled | OrderFullyPaid | OrderUpdated | PageCreated | PageDeleted | PageUpdated | ProductCreated | ProductDeleted | ProductUpdated | ProductVariantBackInStock | ProductVariantCreated | ProductVariantDeleted | ProductVariantOutOfStock | ProductVariantUpdated | SaleCreated | SaleDeleted | SaleUpdated | ShippingPriceCreated | ShippingPriceDeleted | ShippingPriceUpdated | ShippingZoneCreated | ShippingZoneDeleted | ShippingZoneUpdated | TransactionActionRequest | TranslationCreated | TranslationUpdated | VoucherCreated | VoucherDeleted | VoucherUpdated | WarehouseCreated | WarehouseDeleted | WarehouseUpdated;
+export type Event = {
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
+};
 
 /** Event delivery. */
 export type EventDelivery = Node & {
@@ -4820,28 +5003,60 @@ export type FulfillmentCancelInput = {
   warehouseId?: InputMaybe<Scalars['ID']>;
 };
 
-export type FulfillmentCanceled = {
+export type FulfillmentCanceled = Event & {
   __typename?: 'FulfillmentCanceled';
   /**
-   * Look up a Fulfillment.
+   * The fulfillment the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   fulfillment?: Maybe<Fulfillment>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /**
+   * The order the fulfillment belongs to.
+   *
+   * Added in Saleor 3.4.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
-export type FulfillmentCreated = {
+export type FulfillmentCreated = Event & {
   __typename?: 'FulfillmentCreated';
   /**
-   * Look up a Fulfillment.
+   * The fulfillment the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   fulfillment?: Maybe<Fulfillment>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /**
+   * The order the fulfillment belongs to.
+   *
+   * Added in Saleor 3.4.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** Represents line of the fulfillment. */
@@ -5324,16 +5539,24 @@ export type GiftCardCreateInput = {
   userEmail?: InputMaybe<Scalars['String']>;
 };
 
-export type GiftCardCreated = {
+export type GiftCardCreated = Event & {
   __typename?: 'GiftCardCreated';
   /**
-   * Look up a gift card.
+   * The gift card the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   giftCard?: Maybe<GiftCard>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -5367,16 +5590,24 @@ export type GiftCardDelete = {
   giftCardErrors: Array<GiftCardError>;
 };
 
-export type GiftCardDeleted = {
+export type GiftCardDeleted = Event & {
   __typename?: 'GiftCardDeleted';
   /**
-   * Look up a gift card.
+   * The gift card the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   giftCard?: Maybe<GiftCard>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type GiftCardError = {
@@ -5574,16 +5805,24 @@ export type GiftCardSortingInput = {
   field: GiftCardSortField;
 };
 
-export type GiftCardStatusChanged = {
+export type GiftCardStatusChanged = Event & {
   __typename?: 'GiftCardStatusChanged';
   /**
-   * Look up a gift card.
+   * The gift card the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   giftCard?: Maybe<GiftCard>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -5680,16 +5919,24 @@ export type GiftCardUpdateInput = {
   startDate?: InputMaybe<Scalars['Date']>;
 };
 
-export type GiftCardUpdated = {
+export type GiftCardUpdated = Event & {
   __typename?: 'GiftCardUpdated';
   /**
-   * Look up a gift card.
+   * The gift card the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   giftCard?: Maybe<GiftCard>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** Represents permission group data. */
@@ -5855,16 +6102,24 @@ export type InvoiceDelete = {
   invoiceErrors: Array<InvoiceError>;
 };
 
-export type InvoiceDeleted = {
+export type InvoiceDeleted = Event & {
   __typename?: 'InvoiceDeleted';
   /**
-   * Look up an Invoice.
+   * The invoice the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   invoice?: Maybe<Invoice>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type InvoiceError = {
@@ -5916,16 +6171,24 @@ export type InvoiceRequestDelete = {
   invoiceErrors: Array<InvoiceError>;
 };
 
-export type InvoiceRequested = {
+export type InvoiceRequested = Event & {
   __typename?: 'InvoiceRequested';
   /**
-   * Look up an Invoice.
+   * The invoice the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   invoice?: Maybe<Invoice>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -5941,16 +6204,24 @@ export type InvoiceSendNotification = {
   invoiceErrors: Array<InvoiceError>;
 };
 
-export type InvoiceSent = {
+export type InvoiceSent = Event & {
   __typename?: 'InvoiceSent';
   /**
-   * Look up an Invoice.
+   * The invoice the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   invoice?: Maybe<Invoice>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -5965,6 +6236,8 @@ export type InvoiceUpdate = {
   /** @deprecated This field will be removed in Saleor 4.0. Use `errors` field instead. */
   invoiceErrors: Array<InvoiceError>;
 };
+
+export type IssuingPrincipal = App | User;
 
 export type Job = {
   /** Created date time of job in ISO 8601 format. */
@@ -6974,16 +7247,24 @@ export type MenuCreateInput = {
   slug?: InputMaybe<Scalars['String']>;
 };
 
-export type MenuCreated = {
+export type MenuCreated = Event & {
   __typename?: 'MenuCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a menu.
+   * The menu the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   menu?: Maybe<Menu>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -7004,16 +7285,24 @@ export type MenuDelete = {
   menuErrors: Array<MenuError>;
 };
 
-export type MenuDeleted = {
+export type MenuDeleted = Event & {
   __typename?: 'MenuDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a menu.
+   * The menu the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   menu?: Maybe<Menu>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -7207,16 +7496,24 @@ export type MenuItemCreateInput = {
   url?: InputMaybe<Scalars['String']>;
 };
 
-export type MenuItemCreated = {
+export type MenuItemCreated = Event & {
   __typename?: 'MenuItemCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a menu item.
+   * The menu item the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   menuItem?: Maybe<MenuItem>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -7237,16 +7534,24 @@ export type MenuItemDelete = {
   menuItem?: Maybe<MenuItem>;
 };
 
-export type MenuItemDeleted = {
+export type MenuItemDeleted = Event & {
   __typename?: 'MenuItemDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a menu item.
+   * The menu item the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   menuItem?: Maybe<MenuItem>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -7354,16 +7659,24 @@ export type MenuItemUpdate = {
   menuItem?: Maybe<MenuItem>;
 };
 
-export type MenuItemUpdated = {
+export type MenuItemUpdated = Event & {
   __typename?: 'MenuItemUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a menu item.
+   * The menu item the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   menuItem?: Maybe<MenuItem>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -7401,16 +7714,24 @@ export type MenuUpdate = {
   menuErrors: Array<MenuError>;
 };
 
-export type MenuUpdated = {
+export type MenuUpdated = Event & {
   __typename?: 'MenuUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a menu.
+   * The menu the event relates to.
    *
    * Added in Saleor 3.4.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   menu?: Maybe<Menu>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -9327,6 +9648,7 @@ export type MutationChannelUpdateArgs = {
 
 export type MutationCheckoutAddPromoCodeArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   promoCode: Scalars['String'];
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -9335,12 +9657,14 @@ export type MutationCheckoutAddPromoCodeArgs = {
 export type MutationCheckoutBillingAddressUpdateArgs = {
   billingAddress: AddressInput;
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
 
 export type MutationCheckoutCompleteArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   paymentData?: InputMaybe<Scalars['JSONString']>;
   redirectUrl?: InputMaybe<Scalars['String']>;
   storeSource?: InputMaybe<Scalars['Boolean']>;
@@ -9356,18 +9680,21 @@ export type MutationCheckoutCreateArgs = {
 export type MutationCheckoutCustomerAttachArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
   customerId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
 
 export type MutationCheckoutCustomerDetachArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
 
 export type MutationCheckoutDeliveryMethodUpdateArgs = {
   deliveryMethodId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
@@ -9375,12 +9702,14 @@ export type MutationCheckoutDeliveryMethodUpdateArgs = {
 export type MutationCheckoutEmailUpdateArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
   email: Scalars['String'];
+  id?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
 
 export type MutationCheckoutLanguageCodeUpdateArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   languageCode: LanguageCodeEnum;
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -9388,6 +9717,7 @@ export type MutationCheckoutLanguageCodeUpdateArgs = {
 
 export type MutationCheckoutLineDeleteArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   lineId?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -9395,19 +9725,22 @@ export type MutationCheckoutLineDeleteArgs = {
 
 export type MutationCheckoutLinesAddArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   lines: Array<CheckoutLineInput>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
 
 export type MutationCheckoutLinesDeleteArgs = {
+  id?: InputMaybe<Scalars['ID']>;
   linesIds: Array<Scalars['ID']>;
-  token: Scalars['UUID'];
+  token?: InputMaybe<Scalars['UUID']>;
 };
 
 
 export type MutationCheckoutLinesUpdateArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   lines: Array<CheckoutLineUpdateInput>;
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -9415,6 +9748,7 @@ export type MutationCheckoutLinesUpdateArgs = {
 
 export type MutationCheckoutPaymentCreateArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   input: PaymentInput;
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -9422,6 +9756,7 @@ export type MutationCheckoutPaymentCreateArgs = {
 
 export type MutationCheckoutRemovePromoCodeArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   promoCode?: InputMaybe<Scalars['String']>;
   promoCodeId?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
@@ -9430,6 +9765,7 @@ export type MutationCheckoutRemovePromoCodeArgs = {
 
 export type MutationCheckoutShippingAddressUpdateArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   shippingAddress: AddressInput;
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -9437,6 +9773,7 @@ export type MutationCheckoutShippingAddressUpdateArgs = {
 
 export type MutationCheckoutShippingMethodUpdateArgs = {
   checkoutId?: InputMaybe<Scalars['ID']>;
+  id?: InputMaybe<Scalars['ID']>;
   shippingMethodId: Scalars['ID'];
   token?: InputMaybe<Scalars['UUID']>;
 };
@@ -10716,6 +11053,14 @@ export type Order = Node & ObjectWithMetadata & {
   /** List of actions that can be performed in the current state of an order. */
   actions: Array<OrderAction>;
   /**
+   * The authorize status of the order.
+   *
+   * Added in Saleor 3.4.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  authorizeStatus: OrderAuthorizeStatusEnum;
+  /**
    * Collection points that can be used for this order.
    *
    * Added in Saleor 3.1.
@@ -10733,6 +11078,14 @@ export type Order = Node & ObjectWithMetadata & {
   /** Informs whether a draft order can be finalized(turned into a regular order). */
   canFinalize: Scalars['Boolean'];
   channel: Channel;
+  /**
+   * The charge status of the order.
+   *
+   * Added in Saleor 3.4.
+   *
+   * Note: this API is currently in Feature Preview and can be subject to changes at later point.
+   */
+  chargeStatus: OrderChargeStatusEnum;
   collectionPointName?: Maybe<Scalars['String']>;
   created: Scalars['DateTime'];
   customerNote: Scalars['String'];
@@ -10944,6 +11297,27 @@ export type OrderAddNoteInput = {
 };
 
 /**
+ * Determine a current authorize status for order.
+ *
+ *     We treat the order as fully authorized when the sum of authorized and charged funds
+ *     cover the order.total.
+ *     We treat the order as partially authorized when the sum of authorized and charged
+ *     funds covers only part of the order.total
+ *     We treat the order as not authorized when the sum of authorized and charged funds is
+ *     0.
+ *
+ *     NONE - the funds are not authorized
+ *     PARTIAL - the funds that are authorized or charged don't cover fully the order's
+ *     total
+ *     FULL - the funds that are authorized or charged fully cover the order's total
+ *
+ */
+export type OrderAuthorizeStatusEnum =
+  | 'FULL'
+  | 'NONE'
+  | 'PARTIAL';
+
+/**
  * Cancels orders.
  *
  * Requires one of the following permissions: MANAGE_ORDERS.
@@ -10971,16 +11345,24 @@ export type OrderCancel = {
   orderErrors: Array<OrderError>;
 };
 
-export type OrderCancelled = {
+export type OrderCancelled = Event & {
   __typename?: 'OrderCancelled';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -10998,6 +11380,26 @@ export type OrderCapture = {
 };
 
 /**
+ * Determine the current charge status for the order.
+ *
+ *     We treat the order as overcharged when the charged amount is bigger that order.total
+ *     We treat the order as fully charged when the charged amount is equal to order.total.
+ *     We treat the order as partially charged when the charged amount covers only part of
+ *     the order.total
+ *
+ *     NONE - the funds are not charged.
+ *     PARTIAL - the funds that are charged don't cover the order's total
+ *     FULL - the funds that are charged fully cover the order's total
+ *     OVERCHARGED - the charged funds are bigger than order's total
+ *
+ */
+export type OrderChargeStatusEnum =
+  | 'FULL'
+  | 'NONE'
+  | 'OVERCHARGED'
+  | 'PARTIAL';
+
+/**
  * Confirms an unconfirmed order by changing status to unfulfilled.
  *
  * Requires one of the following permissions: MANAGE_ORDERS.
@@ -11010,16 +11412,24 @@ export type OrderConfirm = {
   orderErrors: Array<OrderError>;
 };
 
-export type OrderConfirmed = {
+export type OrderConfirmed = Event & {
   __typename?: 'OrderConfirmed';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type OrderCountableConnection = {
@@ -11084,16 +11494,24 @@ export type OrderCreateFromCheckoutErrorCode =
   | 'UNAVAILABLE_VARIANT_IN_CHANNEL'
   | 'VOUCHER_NOT_APPLICABLE';
 
-export type OrderCreated = {
+export type OrderCreated = Event & {
   __typename?: 'OrderCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type OrderDirection =
@@ -11403,7 +11821,9 @@ export type OrderEventsEnum =
   | 'UPDATED_ADDRESS';
 
 export type OrderFilterInput = {
+  authorizeStatus?: InputMaybe<Array<OrderAuthorizeStatusEnum>>;
   channels?: InputMaybe<Array<Scalars['ID']>>;
+  chargeStatus?: InputMaybe<Array<OrderChargeStatusEnum>>;
   created?: InputMaybe<DateRangeInput>;
   customer?: InputMaybe<Scalars['String']>;
   giftCardBought?: InputMaybe<Scalars['Boolean']>;
@@ -11412,6 +11832,7 @@ export type OrderFilterInput = {
   isClickAndCollect?: InputMaybe<Scalars['Boolean']>;
   isPreorder?: InputMaybe<Scalars['Boolean']>;
   metadata?: InputMaybe<Array<MetadataFilter>>;
+  numbers?: InputMaybe<Array<Scalars['String']>>;
   paymentStatus?: InputMaybe<Array<PaymentChargeStatusEnum>>;
   search?: InputMaybe<Scalars['String']>;
   status?: InputMaybe<Array<OrderStatusFilter>>;
@@ -11457,28 +11878,44 @@ export type OrderFulfillStockInput = {
   warehouse: Scalars['ID'];
 };
 
-export type OrderFulfilled = {
+export type OrderFulfilled = Event & {
   __typename?: 'OrderFulfilled';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
-export type OrderFullyPaid = {
+export type OrderFullyPaid = Event & {
   __typename?: 'OrderFullyPaid';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /** Represents order line of particular order. */
@@ -11850,16 +12287,24 @@ export type OrderUpdateShippingInput = {
   shippingMethod?: InputMaybe<Scalars['ID']>;
 };
 
-export type OrderUpdated = {
+export type OrderUpdated = Event & {
   __typename?: 'OrderUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up an order.
+   * The order the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   order?: Maybe<Order>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -12103,16 +12548,24 @@ export type PageCreateInput = {
   title?: InputMaybe<Scalars['String']>;
 };
 
-export type PageCreated = {
+export type PageCreated = Event & {
   __typename?: 'PageCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a page.
+   * The page the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   page?: Maybe<Page>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -12128,16 +12581,24 @@ export type PageDelete = {
   pageErrors: Array<PageError>;
 };
 
-export type PageDeleted = {
+export type PageDeleted = Event & {
   __typename?: 'PageDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a page.
+   * The page the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   page?: Maybe<Page>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type PageError = {
@@ -12571,16 +13032,24 @@ export type PageUpdate = {
   pageErrors: Array<PageError>;
 };
 
-export type PageUpdated = {
+export type PageUpdated = Event & {
   __typename?: 'PageUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a page.
+   * The page the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   page?: Maybe<Page>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -13664,24 +14133,32 @@ export type ProductCreateInput = {
   weight?: InputMaybe<Scalars['WeightScalar']>;
 };
 
-export type ProductCreated = {
+export type ProductCreated = Event & {
   __typename?: 'ProductCreated';
   /**
-   * Look up a category.
+   * The category of the product.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   category?: Maybe<Category>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product.
+   * The product the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   product?: Maybe<Product>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -13702,24 +14179,32 @@ export type ProductDelete = {
   productErrors: Array<ProductError>;
 };
 
-export type ProductDeleted = {
+export type ProductDeleted = Event & {
   __typename?: 'ProductDeleted';
   /**
-   * Look up a category.
+   * The category of the product.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   category?: Maybe<Category>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product.
+   * The product the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   product?: Maybe<Product>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -14429,24 +14914,32 @@ export type ProductUpdate = {
   productErrors: Array<ProductError>;
 };
 
-export type ProductUpdated = {
+export type ProductUpdated = Event & {
   __typename?: 'ProductUpdated';
   /**
-   * Look up a category.
+   * The category of the product.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   category?: Maybe<Category>;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product.
+   * The product the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   product?: Maybe<Product>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -14627,16 +15120,24 @@ export type ProductVariantTranslationArgs = {
   languageCode: LanguageCodeEnum;
 };
 
-export type ProductVariantBackInStock = {
+export type ProductVariantBackInStock = Event & {
   __typename?: 'ProductVariantBackInStock';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product variant.
+   * The product variant the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   productVariant?: Maybe<ProductVariant>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
    * Look up a warehouse.
    *
@@ -14829,16 +15330,24 @@ export type ProductVariantCreateInput = {
   weight?: InputMaybe<Scalars['WeightScalar']>;
 };
 
-export type ProductVariantCreated = {
+export type ProductVariantCreated = Event & {
   __typename?: 'ProductVariantCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product variant.
+   * The product variant the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   productVariant?: Maybe<ProductVariant>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -14859,16 +15368,24 @@ export type ProductVariantDelete = {
   productVariant?: Maybe<ProductVariant>;
 };
 
-export type ProductVariantDeleted = {
+export type ProductVariantDeleted = Event & {
   __typename?: 'ProductVariantDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product variant.
+   * The product variant the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   productVariant?: Maybe<ProductVariant>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -14911,16 +15428,24 @@ export type ProductVariantInput = {
   weight?: InputMaybe<Scalars['WeightScalar']>;
 };
 
-export type ProductVariantOutOfStock = {
+export type ProductVariantOutOfStock = Event & {
   __typename?: 'ProductVariantOutOfStock';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product variant.
+   * The product variant the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   productVariant?: Maybe<ProductVariant>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
    * Look up a warehouse.
    *
@@ -15099,16 +15624,24 @@ export type ProductVariantUpdate = {
   productVariant?: Maybe<ProductVariant>;
 };
 
-export type ProductVariantUpdated = {
+export type ProductVariantUpdated = Event & {
   __typename?: 'ProductVariantUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
   /**
-   * Look up a product variant.
+   * The product variant the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   productVariant?: Maybe<ProductVariant>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -15585,6 +16118,7 @@ export type QueryChannelArgs = {
 
 
 export type QueryCheckoutArgs = {
+  id?: InputMaybe<Scalars['ID']>;
   token?: InputMaybe<Scalars['UUID']>;
 };
 
@@ -16328,16 +16862,24 @@ export type SaleCreate = {
   sale?: Maybe<Sale>;
 };
 
-export type SaleCreated = {
+export type SaleCreated = Event & {
   __typename?: 'SaleCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a sale.
+   * The sale the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   sale?: Maybe<Sale>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -16358,16 +16900,24 @@ export type SaleDelete = {
   sale?: Maybe<Sale>;
 };
 
-export type SaleDeleted = {
+export type SaleDeleted = Event & {
   __typename?: 'SaleDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a sale.
+   * The sale the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   sale?: Maybe<Sale>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -16509,16 +17059,24 @@ export type SaleUpdate = {
   sale?: Maybe<Sale>;
 };
 
-export type SaleUpdated = {
+export type SaleUpdated = Event & {
   __typename?: 'SaleUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a sale.
+   * The sale the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   sale?: Maybe<Sale>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -16959,10 +17517,16 @@ export type ShippingPriceCreate = {
   shippingZone?: Maybe<ShippingZone>;
 };
 
-export type ShippingPriceCreated = {
+export type ShippingPriceCreated = Event & {
   __typename?: 'ShippingPriceCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a shipping method.
+   * The shipping method the event relates to.
    *
    * Added in Saleor 3.2.
    *
@@ -16970,13 +17534,15 @@ export type ShippingPriceCreated = {
    */
   shippingMethod?: Maybe<ShippingMethodType>;
   /**
-   * Look up a shipping zone.
+   * The shipping zone the shipping method belongs to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   shippingZone?: Maybe<ShippingZone>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -17005,10 +17571,16 @@ export type ShippingPriceDelete = {
   shippingZone?: Maybe<ShippingZone>;
 };
 
-export type ShippingPriceDeleted = {
+export type ShippingPriceDeleted = Event & {
   __typename?: 'ShippingPriceDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a shipping method.
+   * The shipping method the event relates to.
    *
    * Added in Saleor 3.2.
    *
@@ -17016,13 +17588,15 @@ export type ShippingPriceDeleted = {
    */
   shippingMethod?: Maybe<ShippingMethodType>;
   /**
-   * Look up a shipping zone.
+   * The shipping zone the shipping method belongs to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   shippingZone?: Maybe<ShippingZone>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -17131,10 +17705,16 @@ export type ShippingPriceUpdate = {
   shippingZone?: Maybe<ShippingZone>;
 };
 
-export type ShippingPriceUpdated = {
+export type ShippingPriceUpdated = Event & {
   __typename?: 'ShippingPriceUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a shipping method.
+   * The shipping method the event relates to.
    *
    * Added in Saleor 3.2.
    *
@@ -17142,13 +17722,15 @@ export type ShippingPriceUpdated = {
    */
   shippingMethod?: Maybe<ShippingMethodType>;
   /**
-   * Look up a shipping zone.
+   * The shipping zone the shipping method belongs to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   shippingZone?: Maybe<ShippingZone>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -17304,16 +17886,24 @@ export type ShippingZoneCreateInput = {
   name?: InputMaybe<Scalars['String']>;
 };
 
-export type ShippingZoneCreated = {
+export type ShippingZoneCreated = Event & {
   __typename?: 'ShippingZoneCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a shipping zone.
+   * The shipping zone the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   shippingZone?: Maybe<ShippingZone>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -17334,16 +17924,24 @@ export type ShippingZoneDelete = {
   shippingZone?: Maybe<ShippingZone>;
 };
 
-export type ShippingZoneDeleted = {
+export type ShippingZoneDeleted = Event & {
   __typename?: 'ShippingZoneDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a shipping zone.
+   * The shipping zone the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   shippingZone?: Maybe<ShippingZone>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -17388,16 +17986,24 @@ export type ShippingZoneUpdateInput = {
   removeWarehouses?: InputMaybe<Array<Scalars['ID']>>;
 };
 
-export type ShippingZoneUpdated = {
+export type ShippingZoneUpdated = Event & {
   __typename?: 'ShippingZoneUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a shipping zone.
+   * The shipping zone the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   shippingZone?: Maybe<ShippingZone>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 
@@ -18109,7 +18715,7 @@ export type TransactionActionEnum =
   | 'REFUND'
   | 'VOID';
 
-export type TransactionActionRequest = {
+export type TransactionActionRequest = Event & {
   __typename?: 'TransactionActionRequest';
   /**
    * Requested action data.
@@ -18119,6 +18725,12 @@ export type TransactionActionRequest = {
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   action: TransactionAction;
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
    * Look up a transaction.
    *
@@ -18127,6 +18739,8 @@ export type TransactionActionRequest = {
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   transaction?: Maybe<TransactionItem>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 /**
@@ -18464,16 +19078,24 @@ export type TranslatableKinds =
   | 'VARIANT'
   | 'VOUCHER';
 
-export type TranslationCreated = {
+export type TranslationCreated = Event & {
   __typename?: 'TranslationCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a translation.
+   * The translation the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   translation?: Maybe<TranslationTypes>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type TranslationError = {
@@ -18507,16 +19129,24 @@ export type TranslationInput = {
 
 export type TranslationTypes = AttributeTranslation | AttributeValueTranslation | CategoryTranslation | CollectionTranslation | MenuItemTranslation | PageTranslation | ProductTranslation | ProductVariantTranslation | SaleTranslation | ShippingMethodTranslation | VoucherTranslation;
 
-export type TranslationUpdated = {
+export type TranslationUpdated = Event & {
   __typename?: 'TranslationUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
   /**
-   * Look up a translation.
+   * The translation the event relates to.
    *
    * Added in Saleor 3.2.
    *
    * Note: this API is currently in Feature Preview and can be subject to changes at later point.
    */
   translation?: Maybe<TranslationTypes>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
 };
 
 export type UpdateInvoiceInput = {
@@ -18569,7 +19199,12 @@ export type User = Node & ObjectWithMetadata & {
    * @deprecated This field will be removed in Saleor 4.0. Use the `checkoutTokens` field to fetch the user checkouts.
    */
   checkout?: Maybe<Checkout>;
-  /** Returns the checkout UUID's assigned to this user. */
+  /** Returns the checkout ID's assigned to this user. */
+  checkoutIds?: Maybe<Array<Scalars['ID']>>;
+  /**
+   * Returns the checkout UUID's assigned to this user.
+   * @deprecated This field will be removed in Saleor 4.0. Use `checkoutIds` instead.
+   */
   checkoutTokens?: Maybe<Array<Scalars['UUID']>>;
   dateJoined: Scalars['DateTime'];
   defaultBillingAddress?: Maybe<Address>;
@@ -18654,6 +19289,12 @@ export type User = Node & ObjectWithMetadata & {
 /** Represents user data. */
 export type UserAvatarArgs = {
   size?: InputMaybe<Scalars['Int']>;
+};
+
+
+/** Represents user data. */
+export type UserCheckoutIdsArgs = {
+  channel?: InputMaybe<Scalars['String']>;
 };
 
 
@@ -19181,10 +19822,18 @@ export type VoucherCreate = {
   voucher?: Maybe<Voucher>;
 };
 
-export type VoucherCreated = {
+export type VoucherCreated = Event & {
   __typename?: 'VoucherCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
-   * Look up a voucher.
+   * The voucher the event relates to.
    *
    * Added in Saleor 3.4.
    *
@@ -19211,10 +19860,18 @@ export type VoucherDelete = {
   voucher?: Maybe<Voucher>;
 };
 
-export type VoucherDeleted = {
+export type VoucherDeleted = Event & {
   __typename?: 'VoucherDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
-   * Look up a voucher.
+   * The voucher the event relates to.
    *
    * Added in Saleor 3.4.
    *
@@ -19391,10 +20048,18 @@ export type VoucherUpdate = {
   voucher?: Maybe<Voucher>;
 };
 
-export type VoucherUpdated = {
+export type VoucherUpdated = Event & {
   __typename?: 'VoucherUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
-   * Look up a voucher.
+   * The voucher the event relates to.
    *
    * Added in Saleor 3.4.
    *
@@ -19555,10 +20220,18 @@ export type WarehouseCreateInput = {
   slug?: InputMaybe<Scalars['String']>;
 };
 
-export type WarehouseCreated = {
+export type WarehouseCreated = Event & {
   __typename?: 'WarehouseCreated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
-   * Look up a warehouse.
+   * The warehouse the event relates to.
    *
    * Added in Saleor 3.4.
    *
@@ -19580,10 +20253,18 @@ export type WarehouseDelete = {
   warehouseErrors: Array<WarehouseError>;
 };
 
-export type WarehouseDeleted = {
+export type WarehouseDeleted = Event & {
   __typename?: 'WarehouseDeleted';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
-   * Look up a warehouse.
+   * The warehouse the event relates to.
    *
    * Added in Saleor 3.4.
    *
@@ -19695,10 +20376,18 @@ export type WarehouseUpdateInput = {
   slug?: InputMaybe<Scalars['String']>;
 };
 
-export type WarehouseUpdated = {
+export type WarehouseUpdated = Event & {
   __typename?: 'WarehouseUpdated';
+  /** Time of the event. */
+  issuedAt?: Maybe<Scalars['DateTime']>;
+  /** The user or application that triggered the event. */
+  issuingPrincipal?: Maybe<IssuingPrincipal>;
+  /** The application receiving the webhook. */
+  recipient?: Maybe<App>;
+  /** Saleor version that triggered the event. */
+  version?: Maybe<Scalars['String']>;
   /**
-   * Look up a warehouse.
+   * The warehouse the event relates to.
    *
    * Added in Saleor 3.4.
    *
@@ -22926,9 +23615,13 @@ export type AppDeleteFailedInstallationFieldPolicy = {
 	appInstallation?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AppDeletedKeySpecifier = ('app' | AppDeletedKeySpecifier)[];
+export type AppDeletedKeySpecifier = ('app' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | AppDeletedKeySpecifier)[];
 export type AppDeletedFieldPolicy = {
-	app?: FieldPolicy<any> | FieldReadFunction<any>
+	app?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type AppErrorKeySpecifier = ('code' | 'field' | 'message' | 'permissions' | AppErrorKeySpecifier)[];
 export type AppErrorFieldPolicy = {
@@ -22981,9 +23674,13 @@ export type AppInstallationFieldPolicy = {
 	status?: FieldPolicy<any> | FieldReadFunction<any>,
 	updatedAt?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AppInstalledKeySpecifier = ('app' | AppInstalledKeySpecifier)[];
+export type AppInstalledKeySpecifier = ('app' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | AppInstalledKeySpecifier)[];
 export type AppInstalledFieldPolicy = {
-	app?: FieldPolicy<any> | FieldReadFunction<any>
+	app?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type AppManifestExtensionKeySpecifier = ('label' | 'mount' | 'permissions' | 'target' | 'url' | AppManifestExtensionKeySpecifier)[];
 export type AppManifestExtensionFieldPolicy = {
@@ -22999,9 +23696,13 @@ export type AppRetryInstallFieldPolicy = {
 	appInstallation?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AppStatusChangedKeySpecifier = ('app' | AppStatusChangedKeySpecifier)[];
+export type AppStatusChangedKeySpecifier = ('app' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | AppStatusChangedKeySpecifier)[];
 export type AppStatusChangedFieldPolicy = {
-	app?: FieldPolicy<any> | FieldReadFunction<any>
+	app?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type AppTokenKeySpecifier = ('authToken' | 'id' | 'name' | AppTokenKeySpecifier)[];
 export type AppTokenFieldPolicy = {
@@ -23034,9 +23735,13 @@ export type AppUpdateFieldPolicy = {
 	appErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type AppUpdatedKeySpecifier = ('app' | AppUpdatedKeySpecifier)[];
+export type AppUpdatedKeySpecifier = ('app' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | AppUpdatedKeySpecifier)[];
 export type AppUpdatedFieldPolicy = {
-	app?: FieldPolicy<any> | FieldReadFunction<any>
+	app?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type AssignNavigationKeySpecifier = ('errors' | 'menu' | 'menuErrors' | AssignNavigationKeySpecifier)[];
 export type AssignNavigationFieldPolicy = {
@@ -23282,9 +23987,13 @@ export type CategoryCreateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CategoryCreatedKeySpecifier = ('category' | CategoryCreatedKeySpecifier)[];
+export type CategoryCreatedKeySpecifier = ('category' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CategoryCreatedKeySpecifier)[];
 export type CategoryCreatedFieldPolicy = {
-	category?: FieldPolicy<any> | FieldReadFunction<any>
+	category?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CategoryDeleteKeySpecifier = ('category' | 'errors' | 'productErrors' | CategoryDeleteKeySpecifier)[];
 export type CategoryDeleteFieldPolicy = {
@@ -23292,9 +24001,13 @@ export type CategoryDeleteFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CategoryDeletedKeySpecifier = ('category' | CategoryDeletedKeySpecifier)[];
+export type CategoryDeletedKeySpecifier = ('category' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CategoryDeletedKeySpecifier)[];
 export type CategoryDeletedFieldPolicy = {
-	category?: FieldPolicy<any> | FieldReadFunction<any>
+	category?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CategoryTranslatableContentKeySpecifier = ('category' | 'description' | 'descriptionJson' | 'id' | 'name' | 'seoDescription' | 'seoTitle' | 'translation' | CategoryTranslatableContentKeySpecifier)[];
 export type CategoryTranslatableContentFieldPolicy = {
@@ -23329,9 +24042,13 @@ export type CategoryUpdateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CategoryUpdatedKeySpecifier = ('category' | CategoryUpdatedKeySpecifier)[];
+export type CategoryUpdatedKeySpecifier = ('category' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CategoryUpdatedKeySpecifier)[];
 export type CategoryUpdatedFieldPolicy = {
-	category?: FieldPolicy<any> | FieldReadFunction<any>
+	category?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ChannelKeySpecifier = ('currencyCode' | 'defaultCountry' | 'hasOrders' | 'id' | 'isActive' | 'name' | 'slug' | ChannelKeySpecifier)[];
 export type ChannelFieldPolicy = {
@@ -23355,9 +24072,13 @@ export type ChannelCreateFieldPolicy = {
 	channelErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ChannelCreatedKeySpecifier = ('channel' | ChannelCreatedKeySpecifier)[];
+export type ChannelCreatedKeySpecifier = ('channel' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | ChannelCreatedKeySpecifier)[];
 export type ChannelCreatedFieldPolicy = {
-	channel?: FieldPolicy<any> | FieldReadFunction<any>
+	channel?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ChannelDeactivateKeySpecifier = ('channel' | 'channelErrors' | 'errors' | ChannelDeactivateKeySpecifier)[];
 export type ChannelDeactivateFieldPolicy = {
@@ -23371,9 +24092,13 @@ export type ChannelDeleteFieldPolicy = {
 	channelErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ChannelDeletedKeySpecifier = ('channel' | ChannelDeletedKeySpecifier)[];
+export type ChannelDeletedKeySpecifier = ('channel' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | ChannelDeletedKeySpecifier)[];
 export type ChannelDeletedFieldPolicy = {
-	channel?: FieldPolicy<any> | FieldReadFunction<any>
+	channel?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ChannelErrorKeySpecifier = ('code' | 'field' | 'message' | 'shippingZones' | ChannelErrorKeySpecifier)[];
 export type ChannelErrorFieldPolicy = {
@@ -23382,9 +24107,13 @@ export type ChannelErrorFieldPolicy = {
 	message?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZones?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ChannelStatusChangedKeySpecifier = ('channel' | ChannelStatusChangedKeySpecifier)[];
+export type ChannelStatusChangedKeySpecifier = ('channel' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | ChannelStatusChangedKeySpecifier)[];
 export type ChannelStatusChangedFieldPolicy = {
-	channel?: FieldPolicy<any> | FieldReadFunction<any>
+	channel?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ChannelUpdateKeySpecifier = ('channel' | 'channelErrors' | 'errors' | ChannelUpdateKeySpecifier)[];
 export type ChannelUpdateFieldPolicy = {
@@ -23392,9 +24121,13 @@ export type ChannelUpdateFieldPolicy = {
 	channelErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ChannelUpdatedKeySpecifier = ('channel' | ChannelUpdatedKeySpecifier)[];
+export type ChannelUpdatedKeySpecifier = ('channel' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | ChannelUpdatedKeySpecifier)[];
 export type ChannelUpdatedFieldPolicy = {
-	channel?: FieldPolicy<any> | FieldReadFunction<any>
+	channel?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CheckoutKeySpecifier = ('availableCollectionPoints' | 'availablePaymentGateways' | 'availableShippingMethods' | 'billingAddress' | 'channel' | 'created' | 'deliveryMethod' | 'discount' | 'discountName' | 'email' | 'giftCards' | 'id' | 'isShippingRequired' | 'languageCode' | 'lastChange' | 'lines' | 'metadata' | 'metafield' | 'metafields' | 'note' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'quantity' | 'shippingAddress' | 'shippingMethod' | 'shippingMethods' | 'shippingPrice' | 'stockReservationExpires' | 'subtotalPrice' | 'token' | 'totalPrice' | 'transactions' | 'translatedDiscountName' | 'user' | 'voucherCode' | CheckoutKeySpecifier)[];
 export type CheckoutFieldPolicy = {
@@ -23473,9 +24206,13 @@ export type CheckoutCreateFieldPolicy = {
 	created?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CheckoutCreatedKeySpecifier = ('checkout' | CheckoutCreatedKeySpecifier)[];
+export type CheckoutCreatedKeySpecifier = ('checkout' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CheckoutCreatedKeySpecifier)[];
 export type CheckoutCreatedFieldPolicy = {
-	checkout?: FieldPolicy<any> | FieldReadFunction<any>
+	checkout?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CheckoutCustomerAttachKeySpecifier = ('checkout' | 'checkoutErrors' | 'errors' | CheckoutCustomerAttachKeySpecifier)[];
 export type CheckoutCustomerAttachFieldPolicy = {
@@ -23515,12 +24252,15 @@ export type CheckoutLanguageCodeUpdateFieldPolicy = {
 	checkoutErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CheckoutLineKeySpecifier = ('id' | 'quantity' | 'requiresShipping' | 'totalPrice' | 'variant' | CheckoutLineKeySpecifier)[];
+export type CheckoutLineKeySpecifier = ('id' | 'quantity' | 'requiresShipping' | 'totalPrice' | 'undiscountedTotalPrice' | 'undiscountedUnitPrice' | 'unitPrice' | 'variant' | CheckoutLineKeySpecifier)[];
 export type CheckoutLineFieldPolicy = {
 	id?: FieldPolicy<any> | FieldReadFunction<any>,
 	quantity?: FieldPolicy<any> | FieldReadFunction<any>,
 	requiresShipping?: FieldPolicy<any> | FieldReadFunction<any>,
 	totalPrice?: FieldPolicy<any> | FieldReadFunction<any>,
+	undiscountedTotalPrice?: FieldPolicy<any> | FieldReadFunction<any>,
+	undiscountedUnitPrice?: FieldPolicy<any> | FieldReadFunction<any>,
+	unitPrice?: FieldPolicy<any> | FieldReadFunction<any>,
 	variant?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CheckoutLineCountableConnectionKeySpecifier = ('edges' | 'pageInfo' | 'totalCount' | CheckoutLineCountableConnectionKeySpecifier)[];
@@ -23582,9 +24322,13 @@ export type CheckoutShippingMethodUpdateFieldPolicy = {
 	checkoutErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CheckoutUpdatedKeySpecifier = ('checkout' | CheckoutUpdatedKeySpecifier)[];
+export type CheckoutUpdatedKeySpecifier = ('checkout' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CheckoutUpdatedKeySpecifier)[];
 export type CheckoutUpdatedFieldPolicy = {
-	checkout?: FieldPolicy<any> | FieldReadFunction<any>
+	checkout?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ChoiceValueKeySpecifier = ('raw' | 'verbose' | ChoiceValueKeySpecifier)[];
 export type ChoiceValueFieldPolicy = {
@@ -23664,9 +24408,13 @@ export type CollectionCreateFieldPolicy = {
 	collectionErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CollectionCreatedKeySpecifier = ('collection' | CollectionCreatedKeySpecifier)[];
+export type CollectionCreatedKeySpecifier = ('collection' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CollectionCreatedKeySpecifier)[];
 export type CollectionCreatedFieldPolicy = {
-	collection?: FieldPolicy<any> | FieldReadFunction<any>
+	collection?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CollectionDeleteKeySpecifier = ('collection' | 'collectionErrors' | 'errors' | CollectionDeleteKeySpecifier)[];
 export type CollectionDeleteFieldPolicy = {
@@ -23674,9 +24422,13 @@ export type CollectionDeleteFieldPolicy = {
 	collectionErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CollectionDeletedKeySpecifier = ('collection' | CollectionDeletedKeySpecifier)[];
+export type CollectionDeletedKeySpecifier = ('collection' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CollectionDeletedKeySpecifier)[];
 export type CollectionDeletedFieldPolicy = {
-	collection?: FieldPolicy<any> | FieldReadFunction<any>
+	collection?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CollectionErrorKeySpecifier = ('code' | 'field' | 'message' | 'products' | CollectionErrorKeySpecifier)[];
 export type CollectionErrorFieldPolicy = {
@@ -23730,9 +24482,13 @@ export type CollectionUpdateFieldPolicy = {
 	collectionErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	errors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CollectionUpdatedKeySpecifier = ('collection' | CollectionUpdatedKeySpecifier)[];
+export type CollectionUpdatedKeySpecifier = ('collection' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | CollectionUpdatedKeySpecifier)[];
 export type CollectionUpdatedFieldPolicy = {
-	collection?: FieldPolicy<any> | FieldReadFunction<any>
+	collection?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ConfigurationItemKeySpecifier = ('helpText' | 'label' | 'name' | 'type' | 'value' | ConfigurationItemKeySpecifier)[];
 export type ConfigurationItemFieldPolicy = {
@@ -23789,9 +24545,13 @@ export type CustomerCreateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	user?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CustomerCreatedKeySpecifier = ('user' | CustomerCreatedKeySpecifier)[];
+export type CustomerCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'user' | 'version' | CustomerCreatedKeySpecifier)[];
 export type CustomerCreatedFieldPolicy = {
-	user?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	user?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type CustomerDeleteKeySpecifier = ('accountErrors' | 'errors' | 'user' | CustomerDeleteKeySpecifier)[];
 export type CustomerDeleteFieldPolicy = {
@@ -23817,9 +24577,13 @@ export type CustomerUpdateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	user?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type CustomerUpdatedKeySpecifier = ('user' | CustomerUpdatedKeySpecifier)[];
+export type CustomerUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'user' | 'version' | CustomerUpdatedKeySpecifier)[];
 export type CustomerUpdatedFieldPolicy = {
-	user?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	user?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type DeactivateAllUserTokensKeySpecifier = ('accountErrors' | 'errors' | DeactivateAllUserTokensKeySpecifier)[];
 export type DeactivateAllUserTokensFieldPolicy = {
@@ -23933,9 +24697,13 @@ export type DraftOrderCreateFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type DraftOrderCreatedKeySpecifier = ('order' | DraftOrderCreatedKeySpecifier)[];
+export type DraftOrderCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | DraftOrderCreatedKeySpecifier)[];
 export type DraftOrderCreatedFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type DraftOrderDeleteKeySpecifier = ('errors' | 'order' | 'orderErrors' | DraftOrderDeleteKeySpecifier)[];
 export type DraftOrderDeleteFieldPolicy = {
@@ -23943,9 +24711,13 @@ export type DraftOrderDeleteFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type DraftOrderDeletedKeySpecifier = ('order' | DraftOrderDeletedKeySpecifier)[];
+export type DraftOrderDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | DraftOrderDeletedKeySpecifier)[];
 export type DraftOrderDeletedFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type DraftOrderLinesBulkDeleteKeySpecifier = ('count' | 'errors' | 'orderErrors' | DraftOrderLinesBulkDeleteKeySpecifier)[];
 export type DraftOrderLinesBulkDeleteFieldPolicy = {
@@ -23959,9 +24731,20 @@ export type DraftOrderUpdateFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type DraftOrderUpdatedKeySpecifier = ('order' | DraftOrderUpdatedKeySpecifier)[];
+export type DraftOrderUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | DraftOrderUpdatedKeySpecifier)[];
 export type DraftOrderUpdatedFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type EventKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | EventKeySpecifier)[];
+export type EventFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type EventDeliveryKeySpecifier = ('attempts' | 'createdAt' | 'eventType' | 'id' | 'payload' | 'status' | EventDeliveryKeySpecifier)[];
 export type EventDeliveryFieldPolicy = {
@@ -24155,13 +24938,23 @@ export type FulfillmentCancelFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type FulfillmentCanceledKeySpecifier = ('fulfillment' | FulfillmentCanceledKeySpecifier)[];
+export type FulfillmentCanceledKeySpecifier = ('fulfillment' | 'issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | FulfillmentCanceledKeySpecifier)[];
 export type FulfillmentCanceledFieldPolicy = {
-	fulfillment?: FieldPolicy<any> | FieldReadFunction<any>
+	fulfillment?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type FulfillmentCreatedKeySpecifier = ('fulfillment' | FulfillmentCreatedKeySpecifier)[];
+export type FulfillmentCreatedKeySpecifier = ('fulfillment' | 'issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | FulfillmentCreatedKeySpecifier)[];
 export type FulfillmentCreatedFieldPolicy = {
-	fulfillment?: FieldPolicy<any> | FieldReadFunction<any>
+	fulfillment?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type FulfillmentLineKeySpecifier = ('id' | 'orderLine' | 'quantity' | FulfillmentLineKeySpecifier)[];
 export type FulfillmentLineFieldPolicy = {
@@ -24278,9 +25071,13 @@ export type GiftCardCreateFieldPolicy = {
 	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
 	giftCardErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type GiftCardCreatedKeySpecifier = ('giftCard' | GiftCardCreatedKeySpecifier)[];
+export type GiftCardCreatedKeySpecifier = ('giftCard' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | GiftCardCreatedKeySpecifier)[];
 export type GiftCardCreatedFieldPolicy = {
-	giftCard?: FieldPolicy<any> | FieldReadFunction<any>
+	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type GiftCardDeactivateKeySpecifier = ('errors' | 'giftCard' | 'giftCardErrors' | GiftCardDeactivateKeySpecifier)[];
 export type GiftCardDeactivateFieldPolicy = {
@@ -24294,9 +25091,13 @@ export type GiftCardDeleteFieldPolicy = {
 	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
 	giftCardErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type GiftCardDeletedKeySpecifier = ('giftCard' | GiftCardDeletedKeySpecifier)[];
+export type GiftCardDeletedKeySpecifier = ('giftCard' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | GiftCardDeletedKeySpecifier)[];
 export type GiftCardDeletedFieldPolicy = {
-	giftCard?: FieldPolicy<any> | FieldReadFunction<any>
+	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type GiftCardErrorKeySpecifier = ('code' | 'field' | 'message' | 'tags' | GiftCardErrorKeySpecifier)[];
 export type GiftCardErrorFieldPolicy = {
@@ -24350,9 +25151,13 @@ export type GiftCardSettingsUpdateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	giftCardSettings?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type GiftCardStatusChangedKeySpecifier = ('giftCard' | GiftCardStatusChangedKeySpecifier)[];
+export type GiftCardStatusChangedKeySpecifier = ('giftCard' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | GiftCardStatusChangedKeySpecifier)[];
 export type GiftCardStatusChangedFieldPolicy = {
-	giftCard?: FieldPolicy<any> | FieldReadFunction<any>
+	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type GiftCardTagKeySpecifier = ('id' | 'name' | GiftCardTagKeySpecifier)[];
 export type GiftCardTagFieldPolicy = {
@@ -24376,9 +25181,13 @@ export type GiftCardUpdateFieldPolicy = {
 	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
 	giftCardErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type GiftCardUpdatedKeySpecifier = ('giftCard' | GiftCardUpdatedKeySpecifier)[];
+export type GiftCardUpdatedKeySpecifier = ('giftCard' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | GiftCardUpdatedKeySpecifier)[];
 export type GiftCardUpdatedFieldPolicy = {
-	giftCard?: FieldPolicy<any> | FieldReadFunction<any>
+	giftCard?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type GroupKeySpecifier = ('id' | 'name' | 'permissions' | 'userCanManage' | 'users' | GroupKeySpecifier)[];
 export type GroupFieldPolicy = {
@@ -24433,9 +25242,13 @@ export type InvoiceDeleteFieldPolicy = {
 	invoice?: FieldPolicy<any> | FieldReadFunction<any>,
 	invoiceErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type InvoiceDeletedKeySpecifier = ('invoice' | InvoiceDeletedKeySpecifier)[];
+export type InvoiceDeletedKeySpecifier = ('invoice' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | InvoiceDeletedKeySpecifier)[];
 export type InvoiceDeletedFieldPolicy = {
-	invoice?: FieldPolicy<any> | FieldReadFunction<any>
+	invoice?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type InvoiceErrorKeySpecifier = ('code' | 'field' | 'message' | InvoiceErrorKeySpecifier)[];
 export type InvoiceErrorFieldPolicy = {
@@ -24456,9 +25269,13 @@ export type InvoiceRequestDeleteFieldPolicy = {
 	invoice?: FieldPolicy<any> | FieldReadFunction<any>,
 	invoiceErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type InvoiceRequestedKeySpecifier = ('invoice' | InvoiceRequestedKeySpecifier)[];
+export type InvoiceRequestedKeySpecifier = ('invoice' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | InvoiceRequestedKeySpecifier)[];
 export type InvoiceRequestedFieldPolicy = {
-	invoice?: FieldPolicy<any> | FieldReadFunction<any>
+	invoice?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type InvoiceSendNotificationKeySpecifier = ('errors' | 'invoice' | 'invoiceErrors' | InvoiceSendNotificationKeySpecifier)[];
 export type InvoiceSendNotificationFieldPolicy = {
@@ -24466,9 +25283,13 @@ export type InvoiceSendNotificationFieldPolicy = {
 	invoice?: FieldPolicy<any> | FieldReadFunction<any>,
 	invoiceErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type InvoiceSentKeySpecifier = ('invoice' | InvoiceSentKeySpecifier)[];
+export type InvoiceSentKeySpecifier = ('invoice' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | InvoiceSentKeySpecifier)[];
 export type InvoiceSentFieldPolicy = {
-	invoice?: FieldPolicy<any> | FieldReadFunction<any>
+	invoice?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type InvoiceUpdateKeySpecifier = ('errors' | 'invoice' | 'invoiceErrors' | InvoiceUpdateKeySpecifier)[];
 export type InvoiceUpdateFieldPolicy = {
@@ -24558,9 +25379,13 @@ export type MenuCreateFieldPolicy = {
 	menu?: FieldPolicy<any> | FieldReadFunction<any>,
 	menuErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MenuCreatedKeySpecifier = ('menu' | MenuCreatedKeySpecifier)[];
+export type MenuCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'menu' | 'recipient' | 'version' | MenuCreatedKeySpecifier)[];
 export type MenuCreatedFieldPolicy = {
-	menu?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	menu?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type MenuDeleteKeySpecifier = ('errors' | 'menu' | 'menuErrors' | MenuDeleteKeySpecifier)[];
 export type MenuDeleteFieldPolicy = {
@@ -24568,9 +25393,13 @@ export type MenuDeleteFieldPolicy = {
 	menu?: FieldPolicy<any> | FieldReadFunction<any>,
 	menuErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MenuDeletedKeySpecifier = ('menu' | MenuDeletedKeySpecifier)[];
+export type MenuDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'menu' | 'recipient' | 'version' | MenuDeletedKeySpecifier)[];
 export type MenuDeletedFieldPolicy = {
-	menu?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	menu?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type MenuErrorKeySpecifier = ('code' | 'field' | 'message' | MenuErrorKeySpecifier)[];
 export type MenuErrorFieldPolicy = {
@@ -24621,9 +25450,13 @@ export type MenuItemCreateFieldPolicy = {
 	menuErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	menuItem?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MenuItemCreatedKeySpecifier = ('menuItem' | MenuItemCreatedKeySpecifier)[];
+export type MenuItemCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'menuItem' | 'recipient' | 'version' | MenuItemCreatedKeySpecifier)[];
 export type MenuItemCreatedFieldPolicy = {
-	menuItem?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	menuItem?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type MenuItemDeleteKeySpecifier = ('errors' | 'menuErrors' | 'menuItem' | MenuItemDeleteKeySpecifier)[];
 export type MenuItemDeleteFieldPolicy = {
@@ -24631,9 +25464,13 @@ export type MenuItemDeleteFieldPolicy = {
 	menuErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	menuItem?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MenuItemDeletedKeySpecifier = ('menuItem' | MenuItemDeletedKeySpecifier)[];
+export type MenuItemDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'menuItem' | 'recipient' | 'version' | MenuItemDeletedKeySpecifier)[];
 export type MenuItemDeletedFieldPolicy = {
-	menuItem?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	menuItem?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type MenuItemMoveKeySpecifier = ('errors' | 'menu' | 'menuErrors' | MenuItemMoveKeySpecifier)[];
 export type MenuItemMoveFieldPolicy = {
@@ -24666,9 +25503,13 @@ export type MenuItemUpdateFieldPolicy = {
 	menuErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	menuItem?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MenuItemUpdatedKeySpecifier = ('menuItem' | MenuItemUpdatedKeySpecifier)[];
+export type MenuItemUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'menuItem' | 'recipient' | 'version' | MenuItemUpdatedKeySpecifier)[];
 export type MenuItemUpdatedFieldPolicy = {
-	menuItem?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	menuItem?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type MenuUpdateKeySpecifier = ('errors' | 'menu' | 'menuErrors' | MenuUpdateKeySpecifier)[];
 export type MenuUpdateFieldPolicy = {
@@ -24676,9 +25517,13 @@ export type MenuUpdateFieldPolicy = {
 	menu?: FieldPolicy<any> | FieldReadFunction<any>,
 	menuErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type MenuUpdatedKeySpecifier = ('menu' | MenuUpdatedKeySpecifier)[];
+export type MenuUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'menu' | 'recipient' | 'version' | MenuUpdatedKeySpecifier)[];
 export type MenuUpdatedFieldPolicy = {
-	menu?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	menu?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type MetadataErrorKeySpecifier = ('code' | 'field' | 'message' | MetadataErrorKeySpecifier)[];
 export type MetadataErrorFieldPolicy = {
@@ -24994,14 +25839,16 @@ export type ObjectWithMetadataFieldPolicy = {
 	privateMetafield?: FieldPolicy<any> | FieldReadFunction<any>,
 	privateMetafields?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderKeySpecifier = ('actions' | 'availableCollectionPoints' | 'availableShippingMethods' | 'billingAddress' | 'canFinalize' | 'channel' | 'collectionPointName' | 'created' | 'customerNote' | 'deliveryMethod' | 'discount' | 'discountName' | 'discounts' | 'displayGrossPrices' | 'errors' | 'events' | 'fulfillments' | 'giftCards' | 'id' | 'invoices' | 'isPaid' | 'isShippingRequired' | 'languageCode' | 'languageCodeEnum' | 'lines' | 'metadata' | 'metafield' | 'metafields' | 'number' | 'origin' | 'original' | 'paymentStatus' | 'paymentStatusDisplay' | 'payments' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'redirectUrl' | 'shippingAddress' | 'shippingMethod' | 'shippingMethodName' | 'shippingMethods' | 'shippingPrice' | 'shippingTaxRate' | 'status' | 'statusDisplay' | 'subtotal' | 'token' | 'total' | 'totalAuthorized' | 'totalBalance' | 'totalCaptured' | 'trackingClientId' | 'transactions' | 'translatedDiscountName' | 'undiscountedTotal' | 'updatedAt' | 'user' | 'userEmail' | 'voucher' | 'weight' | OrderKeySpecifier)[];
+export type OrderKeySpecifier = ('actions' | 'authorizeStatus' | 'availableCollectionPoints' | 'availableShippingMethods' | 'billingAddress' | 'canFinalize' | 'channel' | 'chargeStatus' | 'collectionPointName' | 'created' | 'customerNote' | 'deliveryMethod' | 'discount' | 'discountName' | 'discounts' | 'displayGrossPrices' | 'errors' | 'events' | 'fulfillments' | 'giftCards' | 'id' | 'invoices' | 'isPaid' | 'isShippingRequired' | 'languageCode' | 'languageCodeEnum' | 'lines' | 'metadata' | 'metafield' | 'metafields' | 'number' | 'origin' | 'original' | 'paymentStatus' | 'paymentStatusDisplay' | 'payments' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'redirectUrl' | 'shippingAddress' | 'shippingMethod' | 'shippingMethodName' | 'shippingMethods' | 'shippingPrice' | 'shippingTaxRate' | 'status' | 'statusDisplay' | 'subtotal' | 'token' | 'total' | 'totalAuthorized' | 'totalBalance' | 'totalCaptured' | 'trackingClientId' | 'transactions' | 'translatedDiscountName' | 'undiscountedTotal' | 'updatedAt' | 'user' | 'userEmail' | 'voucher' | 'weight' | OrderKeySpecifier)[];
 export type OrderFieldPolicy = {
 	actions?: FieldPolicy<any> | FieldReadFunction<any>,
+	authorizeStatus?: FieldPolicy<any> | FieldReadFunction<any>,
 	availableCollectionPoints?: FieldPolicy<any> | FieldReadFunction<any>,
 	availableShippingMethods?: FieldPolicy<any> | FieldReadFunction<any>,
 	billingAddress?: FieldPolicy<any> | FieldReadFunction<any>,
 	canFinalize?: FieldPolicy<any> | FieldReadFunction<any>,
 	channel?: FieldPolicy<any> | FieldReadFunction<any>,
+	chargeStatus?: FieldPolicy<any> | FieldReadFunction<any>,
 	collectionPointName?: FieldPolicy<any> | FieldReadFunction<any>,
 	created?: FieldPolicy<any> | FieldReadFunction<any>,
 	customerNote?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -25077,9 +25924,13 @@ export type OrderCancelFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderCancelledKeySpecifier = ('order' | OrderCancelledKeySpecifier)[];
+export type OrderCancelledKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | OrderCancelledKeySpecifier)[];
 export type OrderCancelledFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type OrderCaptureKeySpecifier = ('errors' | 'order' | 'orderErrors' | OrderCaptureKeySpecifier)[];
 export type OrderCaptureFieldPolicy = {
@@ -25093,9 +25944,13 @@ export type OrderConfirmFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderConfirmedKeySpecifier = ('order' | OrderConfirmedKeySpecifier)[];
+export type OrderConfirmedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | OrderConfirmedKeySpecifier)[];
 export type OrderConfirmedFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type OrderCountableConnectionKeySpecifier = ('edges' | 'pageInfo' | 'totalCount' | OrderCountableConnectionKeySpecifier)[];
 export type OrderCountableConnectionFieldPolicy = {
@@ -25121,9 +25976,13 @@ export type OrderCreateFromCheckoutErrorFieldPolicy = {
 	message?: FieldPolicy<any> | FieldReadFunction<any>,
 	variants?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderCreatedKeySpecifier = ('order' | OrderCreatedKeySpecifier)[];
+export type OrderCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | OrderCreatedKeySpecifier)[];
 export type OrderCreatedFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type OrderDiscountKeySpecifier = ('amount' | 'id' | 'name' | 'reason' | 'translatedName' | 'type' | 'value' | 'valueType' | OrderDiscountKeySpecifier)[];
 export type OrderDiscountFieldPolicy = {
@@ -25227,13 +26086,21 @@ export type OrderFulfillFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderFulfilledKeySpecifier = ('order' | OrderFulfilledKeySpecifier)[];
+export type OrderFulfilledKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | OrderFulfilledKeySpecifier)[];
 export type OrderFulfilledFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderFullyPaidKeySpecifier = ('order' | OrderFullyPaidKeySpecifier)[];
+export type OrderFullyPaidKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | OrderFullyPaidKeySpecifier)[];
 export type OrderFullyPaidFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type OrderLineKeySpecifier = ('allocations' | 'digitalContentUrl' | 'id' | 'isShippingRequired' | 'productName' | 'productSku' | 'productVariantId' | 'quantity' | 'quantityFulfilled' | 'quantityToFulfill' | 'taxRate' | 'thumbnail' | 'totalPrice' | 'translatedProductName' | 'translatedVariantName' | 'undiscountedUnitPrice' | 'unitDiscount' | 'unitDiscountReason' | 'unitDiscountType' | 'unitDiscountValue' | 'unitPrice' | 'variant' | 'variantName' | OrderLineKeySpecifier)[];
 export type OrderLineFieldPolicy = {
@@ -25337,9 +26204,13 @@ export type OrderUpdateShippingFieldPolicy = {
 	order?: FieldPolicy<any> | FieldReadFunction<any>,
 	orderErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type OrderUpdatedKeySpecifier = ('order' | OrderUpdatedKeySpecifier)[];
+export type OrderUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'order' | 'recipient' | 'version' | OrderUpdatedKeySpecifier)[];
 export type OrderUpdatedFieldPolicy = {
-	order?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	order?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type OrderVoidKeySpecifier = ('errors' | 'order' | 'orderErrors' | OrderVoidKeySpecifier)[];
 export type OrderVoidFieldPolicy = {
@@ -25411,9 +26282,13 @@ export type PageCreateFieldPolicy = {
 	page?: FieldPolicy<any> | FieldReadFunction<any>,
 	pageErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type PageCreatedKeySpecifier = ('page' | PageCreatedKeySpecifier)[];
+export type PageCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'page' | 'recipient' | 'version' | PageCreatedKeySpecifier)[];
 export type PageCreatedFieldPolicy = {
-	page?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	page?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type PageDeleteKeySpecifier = ('errors' | 'page' | 'pageErrors' | PageDeleteKeySpecifier)[];
 export type PageDeleteFieldPolicy = {
@@ -25421,9 +26296,13 @@ export type PageDeleteFieldPolicy = {
 	page?: FieldPolicy<any> | FieldReadFunction<any>,
 	pageErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type PageDeletedKeySpecifier = ('page' | PageDeletedKeySpecifier)[];
+export type PageDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'page' | 'recipient' | 'version' | PageDeletedKeySpecifier)[];
 export type PageDeletedFieldPolicy = {
-	page?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	page?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type PageErrorKeySpecifier = ('attributes' | 'code' | 'field' | 'message' | 'values' | PageErrorKeySpecifier)[];
 export type PageErrorFieldPolicy = {
@@ -25536,9 +26415,13 @@ export type PageUpdateFieldPolicy = {
 	page?: FieldPolicy<any> | FieldReadFunction<any>,
 	pageErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type PageUpdatedKeySpecifier = ('page' | PageUpdatedKeySpecifier)[];
+export type PageUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'page' | 'recipient' | 'version' | PageUpdatedKeySpecifier)[];
 export type PageUpdatedFieldPolicy = {
-	page?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	page?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type PasswordChangeKeySpecifier = ('accountErrors' | 'errors' | 'user' | PasswordChangeKeySpecifier)[];
 export type PasswordChangeFieldPolicy = {
@@ -25834,10 +26717,14 @@ export type ProductCreateFieldPolicy = {
 	product?: FieldPolicy<any> | FieldReadFunction<any>,
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductCreatedKeySpecifier = ('category' | 'product' | ProductCreatedKeySpecifier)[];
+export type ProductCreatedKeySpecifier = ('category' | 'issuedAt' | 'issuingPrincipal' | 'product' | 'recipient' | 'version' | ProductCreatedKeySpecifier)[];
 export type ProductCreatedFieldPolicy = {
 	category?: FieldPolicy<any> | FieldReadFunction<any>,
-	product?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	product?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProductDeleteKeySpecifier = ('errors' | 'product' | 'productErrors' | ProductDeleteKeySpecifier)[];
 export type ProductDeleteFieldPolicy = {
@@ -25845,10 +26732,14 @@ export type ProductDeleteFieldPolicy = {
 	product?: FieldPolicy<any> | FieldReadFunction<any>,
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductDeletedKeySpecifier = ('category' | 'product' | ProductDeletedKeySpecifier)[];
+export type ProductDeletedKeySpecifier = ('category' | 'issuedAt' | 'issuingPrincipal' | 'product' | 'recipient' | 'version' | ProductDeletedKeySpecifier)[];
 export type ProductDeletedFieldPolicy = {
 	category?: FieldPolicy<any> | FieldReadFunction<any>,
-	product?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	product?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProductErrorKeySpecifier = ('attributes' | 'code' | 'field' | 'message' | 'values' | ProductErrorKeySpecifier)[];
 export type ProductErrorFieldPolicy = {
@@ -26021,10 +26912,14 @@ export type ProductUpdateFieldPolicy = {
 	product?: FieldPolicy<any> | FieldReadFunction<any>,
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductUpdatedKeySpecifier = ('category' | 'product' | ProductUpdatedKeySpecifier)[];
+export type ProductUpdatedKeySpecifier = ('category' | 'issuedAt' | 'issuingPrincipal' | 'product' | 'recipient' | 'version' | ProductUpdatedKeySpecifier)[];
 export type ProductUpdatedFieldPolicy = {
 	category?: FieldPolicy<any> | FieldReadFunction<any>,
-	product?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	product?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProductVariantKeySpecifier = ('attributes' | 'channel' | 'channelListings' | 'created' | 'digitalContent' | 'id' | 'images' | 'margin' | 'media' | 'metadata' | 'metafield' | 'metafields' | 'name' | 'preorder' | 'pricing' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'product' | 'quantityAvailable' | 'quantityLimitPerCustomer' | 'quantityOrdered' | 'revenue' | 'sku' | 'stocks' | 'trackInventory' | 'translation' | 'updatedAt' | 'weight' | ProductVariantKeySpecifier)[];
 export type ProductVariantFieldPolicy = {
@@ -26058,9 +26953,13 @@ export type ProductVariantFieldPolicy = {
 	updatedAt?: FieldPolicy<any> | FieldReadFunction<any>,
 	weight?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductVariantBackInStockKeySpecifier = ('productVariant' | 'warehouse' | ProductVariantBackInStockKeySpecifier)[];
+export type ProductVariantBackInStockKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'productVariant' | 'recipient' | 'version' | 'warehouse' | ProductVariantBackInStockKeySpecifier)[];
 export type ProductVariantBackInStockFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
 	productVariant?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProductVariantBulkCreateKeySpecifier = ('bulkProductErrors' | 'count' | 'errors' | 'productVariants' | ProductVariantBulkCreateKeySpecifier)[];
@@ -26108,9 +27007,13 @@ export type ProductVariantCreateFieldPolicy = {
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	productVariant?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductVariantCreatedKeySpecifier = ('productVariant' | ProductVariantCreatedKeySpecifier)[];
+export type ProductVariantCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'productVariant' | 'recipient' | 'version' | ProductVariantCreatedKeySpecifier)[];
 export type ProductVariantCreatedFieldPolicy = {
-	productVariant?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	productVariant?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProductVariantDeleteKeySpecifier = ('errors' | 'productErrors' | 'productVariant' | ProductVariantDeleteKeySpecifier)[];
 export type ProductVariantDeleteFieldPolicy = {
@@ -26118,13 +27021,21 @@ export type ProductVariantDeleteFieldPolicy = {
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	productVariant?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductVariantDeletedKeySpecifier = ('productVariant' | ProductVariantDeletedKeySpecifier)[];
+export type ProductVariantDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'productVariant' | 'recipient' | 'version' | ProductVariantDeletedKeySpecifier)[];
 export type ProductVariantDeletedFieldPolicy = {
-	productVariant?: FieldPolicy<any> | FieldReadFunction<any>
-};
-export type ProductVariantOutOfStockKeySpecifier = ('productVariant' | 'warehouse' | ProductVariantOutOfStockKeySpecifier)[];
-export type ProductVariantOutOfStockFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
 	productVariant?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
+};
+export type ProductVariantOutOfStockKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'productVariant' | 'recipient' | 'version' | 'warehouse' | ProductVariantOutOfStockKeySpecifier)[];
+export type ProductVariantOutOfStockFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	productVariant?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ProductVariantPreorderDeactivateKeySpecifier = ('errors' | 'productVariant' | ProductVariantPreorderDeactivateKeySpecifier)[];
@@ -26194,9 +27105,13 @@ export type ProductVariantUpdateFieldPolicy = {
 	productErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	productVariant?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ProductVariantUpdatedKeySpecifier = ('productVariant' | ProductVariantUpdatedKeySpecifier)[];
+export type ProductVariantUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'productVariant' | 'recipient' | 'version' | ProductVariantUpdatedKeySpecifier)[];
 export type ProductVariantUpdatedFieldPolicy = {
-	productVariant?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	productVariant?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type QueryKeySpecifier = ('_entities' | '_service' | 'address' | 'addressValidationRules' | 'app' | 'appExtension' | 'appExtensions' | 'apps' | 'appsInstallations' | 'attribute' | 'attributes' | 'categories' | 'category' | 'channel' | 'channels' | 'checkout' | 'checkoutLines' | 'checkouts' | 'collection' | 'collections' | 'customers' | 'digitalContent' | 'digitalContents' | 'draftOrders' | 'exportFile' | 'exportFiles' | 'giftCard' | 'giftCardCurrencies' | 'giftCardSettings' | 'giftCardTags' | 'giftCards' | 'homepageEvents' | 'me' | 'menu' | 'menuItem' | 'menuItems' | 'menus' | 'order' | 'orderByToken' | 'orderSettings' | 'orders' | 'ordersTotal' | 'page' | 'pageType' | 'pageTypes' | 'pages' | 'payment' | 'payments' | 'permissionGroup' | 'permissionGroups' | 'plugin' | 'plugins' | 'product' | 'productType' | 'productTypes' | 'productVariant' | 'productVariants' | 'products' | 'reportProductSales' | 'sale' | 'sales' | 'shippingZone' | 'shippingZones' | 'shop' | 'staffUsers' | 'stock' | 'stocks' | 'taxTypes' | 'translation' | 'translations' | 'user' | 'voucher' | 'vouchers' | 'warehouse' | 'warehouses' | 'webhook' | 'webhookEvents' | 'webhookSamplePayload' | QueryKeySpecifier)[];
 export type QueryFieldPolicy = {
@@ -26368,9 +27283,13 @@ export type SaleCreateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	sale?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type SaleCreatedKeySpecifier = ('sale' | SaleCreatedKeySpecifier)[];
+export type SaleCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'sale' | 'version' | SaleCreatedKeySpecifier)[];
 export type SaleCreatedFieldPolicy = {
-	sale?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	sale?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type SaleDeleteKeySpecifier = ('discountErrors' | 'errors' | 'sale' | SaleDeleteKeySpecifier)[];
 export type SaleDeleteFieldPolicy = {
@@ -26378,9 +27297,13 @@ export type SaleDeleteFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	sale?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type SaleDeletedKeySpecifier = ('sale' | SaleDeletedKeySpecifier)[];
+export type SaleDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'sale' | 'version' | SaleDeletedKeySpecifier)[];
 export type SaleDeletedFieldPolicy = {
-	sale?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	sale?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type SaleRemoveCataloguesKeySpecifier = ('discountErrors' | 'errors' | 'sale' | SaleRemoveCataloguesKeySpecifier)[];
 export type SaleRemoveCataloguesFieldPolicy = {
@@ -26413,9 +27336,13 @@ export type SaleUpdateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	sale?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type SaleUpdatedKeySpecifier = ('sale' | SaleUpdatedKeySpecifier)[];
+export type SaleUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'sale' | 'version' | SaleUpdatedKeySpecifier)[];
 export type SaleUpdatedFieldPolicy = {
-	sale?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	sale?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type SelectedAttributeKeySpecifier = ('attribute' | 'values' | SelectedAttributeKeySpecifier)[];
 export type SelectedAttributeFieldPolicy = {
@@ -26534,10 +27461,14 @@ export type ShippingPriceCreateFieldPolicy = {
 	shippingMethod?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ShippingPriceCreatedKeySpecifier = ('shippingMethod' | 'shippingZone' | ShippingPriceCreatedKeySpecifier)[];
+export type ShippingPriceCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'shippingMethod' | 'shippingZone' | 'version' | ShippingPriceCreatedKeySpecifier)[];
 export type ShippingPriceCreatedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingMethod?: FieldPolicy<any> | FieldReadFunction<any>,
-	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
+	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ShippingPriceDeleteKeySpecifier = ('errors' | 'shippingErrors' | 'shippingMethod' | 'shippingZone' | ShippingPriceDeleteKeySpecifier)[];
 export type ShippingPriceDeleteFieldPolicy = {
@@ -26546,10 +27477,14 @@ export type ShippingPriceDeleteFieldPolicy = {
 	shippingMethod?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ShippingPriceDeletedKeySpecifier = ('shippingMethod' | 'shippingZone' | ShippingPriceDeletedKeySpecifier)[];
+export type ShippingPriceDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'shippingMethod' | 'shippingZone' | 'version' | ShippingPriceDeletedKeySpecifier)[];
 export type ShippingPriceDeletedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingMethod?: FieldPolicy<any> | FieldReadFunction<any>,
-	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
+	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ShippingPriceExcludeProductsKeySpecifier = ('errors' | 'shippingErrors' | 'shippingMethod' | ShippingPriceExcludeProductsKeySpecifier)[];
 export type ShippingPriceExcludeProductsFieldPolicy = {
@@ -26576,10 +27511,14 @@ export type ShippingPriceUpdateFieldPolicy = {
 	shippingMethod?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ShippingPriceUpdatedKeySpecifier = ('shippingMethod' | 'shippingZone' | ShippingPriceUpdatedKeySpecifier)[];
+export type ShippingPriceUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'shippingMethod' | 'shippingZone' | 'version' | ShippingPriceUpdatedKeySpecifier)[];
 export type ShippingPriceUpdatedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingMethod?: FieldPolicy<any> | FieldReadFunction<any>,
-	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
+	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ShippingZoneKeySpecifier = ('channels' | 'countries' | 'default' | 'description' | 'id' | 'metadata' | 'metafield' | 'metafields' | 'name' | 'priceRange' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'shippingMethods' | 'warehouses' | ShippingZoneKeySpecifier)[];
 export type ShippingZoneFieldPolicy = {
@@ -26622,9 +27561,13 @@ export type ShippingZoneCreateFieldPolicy = {
 	shippingErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ShippingZoneCreatedKeySpecifier = ('shippingZone' | ShippingZoneCreatedKeySpecifier)[];
+export type ShippingZoneCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'shippingZone' | 'version' | ShippingZoneCreatedKeySpecifier)[];
 export type ShippingZoneCreatedFieldPolicy = {
-	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ShippingZoneDeleteKeySpecifier = ('errors' | 'shippingErrors' | 'shippingZone' | ShippingZoneDeleteKeySpecifier)[];
 export type ShippingZoneDeleteFieldPolicy = {
@@ -26632,9 +27575,13 @@ export type ShippingZoneDeleteFieldPolicy = {
 	shippingErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ShippingZoneDeletedKeySpecifier = ('shippingZone' | ShippingZoneDeletedKeySpecifier)[];
+export type ShippingZoneDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'shippingZone' | 'version' | ShippingZoneDeletedKeySpecifier)[];
 export type ShippingZoneDeletedFieldPolicy = {
-	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ShippingZoneUpdateKeySpecifier = ('errors' | 'shippingErrors' | 'shippingZone' | ShippingZoneUpdateKeySpecifier)[];
 export type ShippingZoneUpdateFieldPolicy = {
@@ -26642,9 +27589,13 @@ export type ShippingZoneUpdateFieldPolicy = {
 	shippingErrors?: FieldPolicy<any> | FieldReadFunction<any>,
 	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type ShippingZoneUpdatedKeySpecifier = ('shippingZone' | ShippingZoneUpdatedKeySpecifier)[];
+export type ShippingZoneUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'shippingZone' | 'version' | ShippingZoneUpdatedKeySpecifier)[];
 export type ShippingZoneUpdatedFieldPolicy = {
-	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	shippingZone?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type ShopKeySpecifier = ('automaticFulfillmentDigitalProducts' | 'availableExternalAuthentications' | 'availablePaymentGateways' | 'availableShippingMethods' | 'channelCurrencies' | 'chargeTaxesOnShipping' | 'companyAddress' | 'countries' | 'customerSetPasswordUrl' | 'defaultCountry' | 'defaultDigitalMaxDownloads' | 'defaultDigitalUrlValidDays' | 'defaultMailSenderAddress' | 'defaultMailSenderName' | 'defaultWeightUnit' | 'description' | 'displayGrossPrices' | 'domain' | 'fulfillmentAllowUnpaid' | 'fulfillmentAutoApprove' | 'headerText' | 'includeTaxesInPrices' | 'languages' | 'limitQuantityPerCheckout' | 'limits' | 'name' | 'permissions' | 'phonePrefixes' | 'reserveStockDurationAnonymousUser' | 'reserveStockDurationAuthenticatedUser' | 'staffNotificationRecipients' | 'trackInventoryByDefault' | 'translation' | 'version' | ShopKeySpecifier)[];
 export type ShopFieldPolicy = {
@@ -26854,10 +27805,14 @@ export type TransactionActionFieldPolicy = {
 	actionType?: FieldPolicy<any> | FieldReadFunction<any>,
 	amount?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type TransactionActionRequestKeySpecifier = ('action' | 'transaction' | TransactionActionRequestKeySpecifier)[];
+export type TransactionActionRequestKeySpecifier = ('action' | 'issuedAt' | 'issuingPrincipal' | 'recipient' | 'transaction' | 'version' | TransactionActionRequestKeySpecifier)[];
 export type TransactionActionRequestFieldPolicy = {
 	action?: FieldPolicy<any> | FieldReadFunction<any>,
-	transaction?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	transaction?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type TransactionCreateKeySpecifier = ('errors' | 'transaction' | TransactionCreateKeySpecifier)[];
 export type TransactionCreateFieldPolicy = {
@@ -26932,9 +27887,13 @@ export type TranslatableItemEdgeFieldPolicy = {
 	cursor?: FieldPolicy<any> | FieldReadFunction<any>,
 	node?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type TranslationCreatedKeySpecifier = ('translation' | TranslationCreatedKeySpecifier)[];
+export type TranslationCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'translation' | 'version' | TranslationCreatedKeySpecifier)[];
 export type TranslationCreatedFieldPolicy = {
-	translation?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	translation?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type TranslationErrorKeySpecifier = ('code' | 'field' | 'message' | TranslationErrorKeySpecifier)[];
 export type TranslationErrorFieldPolicy = {
@@ -26942,9 +27901,13 @@ export type TranslationErrorFieldPolicy = {
 	field?: FieldPolicy<any> | FieldReadFunction<any>,
 	message?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type TranslationUpdatedKeySpecifier = ('translation' | TranslationUpdatedKeySpecifier)[];
+export type TranslationUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'translation' | 'version' | TranslationUpdatedKeySpecifier)[];
 export type TranslationUpdatedFieldPolicy = {
-	translation?: FieldPolicy<any> | FieldReadFunction<any>
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	translation?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type UpdateMetadataKeySpecifier = ('errors' | 'item' | 'metadataErrors' | UpdateMetadataKeySpecifier)[];
 export type UpdateMetadataFieldPolicy = {
@@ -26964,11 +27927,12 @@ export type UploadErrorFieldPolicy = {
 	field?: FieldPolicy<any> | FieldReadFunction<any>,
 	message?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type UserKeySpecifier = ('addresses' | 'avatar' | 'checkout' | 'checkoutTokens' | 'dateJoined' | 'defaultBillingAddress' | 'defaultShippingAddress' | 'editableGroups' | 'email' | 'events' | 'firstName' | 'giftCards' | 'id' | 'isActive' | 'isStaff' | 'languageCode' | 'lastLogin' | 'lastName' | 'metadata' | 'metafield' | 'metafields' | 'note' | 'orders' | 'permissionGroups' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'storedPaymentSources' | 'updatedAt' | 'userPermissions' | UserKeySpecifier)[];
+export type UserKeySpecifier = ('addresses' | 'avatar' | 'checkout' | 'checkoutIds' | 'checkoutTokens' | 'dateJoined' | 'defaultBillingAddress' | 'defaultShippingAddress' | 'editableGroups' | 'email' | 'events' | 'firstName' | 'giftCards' | 'id' | 'isActive' | 'isStaff' | 'languageCode' | 'lastLogin' | 'lastName' | 'metadata' | 'metafield' | 'metafields' | 'note' | 'orders' | 'permissionGroups' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'storedPaymentSources' | 'updatedAt' | 'userPermissions' | UserKeySpecifier)[];
 export type UserFieldPolicy = {
 	addresses?: FieldPolicy<any> | FieldReadFunction<any>,
 	avatar?: FieldPolicy<any> | FieldReadFunction<any>,
 	checkout?: FieldPolicy<any> | FieldReadFunction<any>,
+	checkoutIds?: FieldPolicy<any> | FieldReadFunction<any>,
 	checkoutTokens?: FieldPolicy<any> | FieldReadFunction<any>,
 	dateJoined?: FieldPolicy<any> | FieldReadFunction<any>,
 	defaultBillingAddress?: FieldPolicy<any> | FieldReadFunction<any>,
@@ -27144,8 +28108,12 @@ export type VoucherCreateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	voucher?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type VoucherCreatedKeySpecifier = ('voucher' | VoucherCreatedKeySpecifier)[];
+export type VoucherCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | 'voucher' | VoucherCreatedKeySpecifier)[];
 export type VoucherCreatedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	voucher?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type VoucherDeleteKeySpecifier = ('discountErrors' | 'errors' | 'voucher' | VoucherDeleteKeySpecifier)[];
@@ -27154,8 +28122,12 @@ export type VoucherDeleteFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	voucher?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type VoucherDeletedKeySpecifier = ('voucher' | VoucherDeletedKeySpecifier)[];
+export type VoucherDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | 'voucher' | VoucherDeletedKeySpecifier)[];
 export type VoucherDeletedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	voucher?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type VoucherRemoveCataloguesKeySpecifier = ('discountErrors' | 'errors' | 'voucher' | VoucherRemoveCataloguesKeySpecifier)[];
@@ -27189,8 +28161,12 @@ export type VoucherUpdateFieldPolicy = {
 	errors?: FieldPolicy<any> | FieldReadFunction<any>,
 	voucher?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type VoucherUpdatedKeySpecifier = ('voucher' | VoucherUpdatedKeySpecifier)[];
+export type VoucherUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | 'voucher' | VoucherUpdatedKeySpecifier)[];
 export type VoucherUpdatedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	voucher?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type WarehouseKeySpecifier = ('address' | 'clickAndCollectOption' | 'companyName' | 'email' | 'id' | 'isPrivate' | 'metadata' | 'metafield' | 'metafields' | 'name' | 'privateMetadata' | 'privateMetafield' | 'privateMetafields' | 'shippingZones' | 'slug' | WarehouseKeySpecifier)[];
@@ -27228,8 +28204,12 @@ export type WarehouseCreateFieldPolicy = {
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouseErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type WarehouseCreatedKeySpecifier = ('warehouse' | WarehouseCreatedKeySpecifier)[];
+export type WarehouseCreatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | 'warehouse' | WarehouseCreatedKeySpecifier)[];
 export type WarehouseCreatedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type WarehouseDeleteKeySpecifier = ('errors' | 'warehouse' | 'warehouseErrors' | WarehouseDeleteKeySpecifier)[];
@@ -27238,8 +28218,12 @@ export type WarehouseDeleteFieldPolicy = {
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouseErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type WarehouseDeletedKeySpecifier = ('warehouse' | WarehouseDeletedKeySpecifier)[];
+export type WarehouseDeletedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | 'warehouse' | WarehouseDeletedKeySpecifier)[];
 export type WarehouseDeletedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type WarehouseErrorKeySpecifier = ('code' | 'field' | 'message' | WarehouseErrorKeySpecifier)[];
@@ -27266,8 +28250,12 @@ export type WarehouseUpdateFieldPolicy = {
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouseErrors?: FieldPolicy<any> | FieldReadFunction<any>
 };
-export type WarehouseUpdatedKeySpecifier = ('warehouse' | WarehouseUpdatedKeySpecifier)[];
+export type WarehouseUpdatedKeySpecifier = ('issuedAt' | 'issuingPrincipal' | 'recipient' | 'version' | 'warehouse' | WarehouseUpdatedKeySpecifier)[];
 export type WarehouseUpdatedFieldPolicy = {
+	issuedAt?: FieldPolicy<any> | FieldReadFunction<any>,
+	issuingPrincipal?: FieldPolicy<any> | FieldReadFunction<any>,
+	recipient?: FieldPolicy<any> | FieldReadFunction<any>,
+	version?: FieldPolicy<any> | FieldReadFunction<any>,
 	warehouse?: FieldPolicy<any> | FieldReadFunction<any>
 };
 export type WebhookKeySpecifier = ('app' | 'asyncEvents' | 'eventDeliveries' | 'events' | 'id' | 'isActive' | 'name' | 'secretKey' | 'subscriptionQuery' | 'syncEvents' | 'targetUrl' | WebhookKeySpecifier)[];
@@ -28028,6 +29016,10 @@ export type StrictTypedTypePolicies = {
 	DraftOrderUpdated?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | DraftOrderUpdatedKeySpecifier | (() => undefined | DraftOrderUpdatedKeySpecifier),
 		fields?: DraftOrderUpdatedFieldPolicy,
+	},
+	Event?: Omit<TypePolicy, "fields" | "keyFields"> & {
+		keyFields?: false | EventKeySpecifier | (() => undefined | EventKeySpecifier),
+		fields?: EventFieldPolicy,
 	},
 	EventDelivery?: Omit<TypePolicy, "fields" | "keyFields"> & {
 		keyFields?: false | EventDeliveryKeySpecifier | (() => undefined | EventDeliveryKeySpecifier),
